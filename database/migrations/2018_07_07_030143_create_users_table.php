@@ -25,6 +25,7 @@ class CreateUsersTable extends Migration
             $table->string('avatar')->nullable()->comment('头像');
             $table->string('register_source')->nullable()->index()->comment('注册方式');
             $table->boolean('status')->index()->default(true)->comment('用户状态');
+            $table->boolean('email_verified')->index()->default(false)->comment('邮箱验证');
             $table->string('alipay')->nullable()->comment('支付宝账号');
             $table->string('aliname')->nullable()->comment('支付宝实名');
             $table->string('remark')->nullable()->comment('备注');

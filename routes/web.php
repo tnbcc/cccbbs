@@ -7,6 +7,16 @@
  */
 Route::group(['namespace' => 'Home'], function (){
    Route::get('/','IndexsController@index')->name('root');
+    Route::group(['middleware' => 'auth:web'], function() {
+        Route::get('/email_verify_notice', 'IndexsController@emailVerifyNotice')->name('email_verify_notice');
+        // 开始
+        Route::group(['middleware' => 'email_verified'], function() {
+            Route::get('/te',function () {
+                return '11';
+            });
+        });
+        // 结束
+    });
 
 });
 /**登录**/

@@ -11,13 +11,14 @@ class User extends Authenticatable
     use HasApiTokens, Notifiable;
 
     protected $fillable = [
-       'name','email', 'phone', 'password',
+       'name','email', 'phone', 'password','true_ip','email_verified'
     ];
     protected $dates = [
         'last_actived_at',
     ];
     protected $casts = [
-        'status'    => 'boolean',
+        'status'          => 'boolean',
+        'email_verified'  => 'boolean',
     ];
     public function findForPassport($username)
     {
