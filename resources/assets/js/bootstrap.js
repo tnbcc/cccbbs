@@ -1,4 +1,3 @@
-
 window._ = require('lodash');
 
 /**
@@ -6,12 +5,14 @@ window._ = require('lodash');
  * for JavaScript based Bootstrap features such as modals and tabs. This
  * code may be modified to fit the specific needs of your application.
  */
-
+require('sweetalert');
 try {
     window.$ = window.jQuery = require('jquery');
-
-    require('bootstrap-sass');
-} catch (e) {}
+    window.SimpleMDE = require('./vendor/simplemde.min');  // simplemde编辑器
+    require('./vendor/semantic');  // semantic ui
+    require('./vendor/particles.min'); // 登录动画效果
+} catch (e) {
+}
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
@@ -38,7 +39,7 @@ if (token) {
 }
 
 /**
- * Echo exposes an expressive API for subscribing to channels and listening
+ * Echo exposes an expressive Api for subscribing to channels and listening
  * for events that are broadcast by Laravel. Echo and event broadcasting
  * allows your team to easily build robust real-time web applications.
  */
@@ -51,3 +52,5 @@ if (token) {
 //     broadcaster: 'pusher',
 //     key: 'your-pusher-key'
 // });
+
+

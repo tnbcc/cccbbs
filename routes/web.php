@@ -1,5 +1,16 @@
 <?php
 
+
+
+/**
+ * 前台路由
+ */
+Route::group(['namespace' => 'Home'], function (){
+   Route::get('/','IndexsController@index')->name('root');
+
+});
+/**登录**/
+Auth::routes();
 /**
  * 后台路由
  */
@@ -7,7 +18,7 @@
 /**后台模块**/
 Route::group(['namespace' => 'Admin','prefix' => 'admin'], function (){
 
-    Route::get('login','AdminsController@showLoginForm')->name('login');  //后台登陆页面
+    Route::get('login','AdminsController@showLoginForm')->name('admin.login');  //后台登陆页面
 
     Route::post('login-handle','AdminsController@loginHandle')->name('login-handle'); //后台登陆逻辑
 
