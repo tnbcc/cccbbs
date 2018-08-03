@@ -40609,7 +40609,7 @@ var kenuo = function () {
                 swal({
                     title: title || "",
                     text: text || "默认内容",
-                    type: type || "warning",
+                    icon: type || "warning",
                     showCancelButton: true,
                     cancelButtonText: cancel || '取消',
                     confirmButtonText: confirm || '确定'
