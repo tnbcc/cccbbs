@@ -84,7 +84,7 @@ class LoginController extends Controller
         $this->validate($request, [
             $this->username() => 'required|string',
             'password' => 'required|string',
-            //'captcha' => 'required|captcha',
+            'captcha' => 'required|captcha',
         ],[
             'captcha.required' => ':attribute 不能为空',
             'captcha.captcha' => '请输入正确的 :attribute',

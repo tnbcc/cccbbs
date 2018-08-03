@@ -20,9 +20,17 @@
                     <div class="ui left icon action input ">
                         <i class="lock icon"></i>
                         <input type="password" name="password" placeholder="密码" value="" required="">
+
                         <a class="ui button basic light" href="<?php echo e(route('password.request')); ?>">
                             忘记密码？
                         </a>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui left icon input">
+                        <i class="envelope icon"></i>
+                        <input type="text" name="captcha" placeholder="请输入验证码" id="captcha" required="">
+                        <img class="thumbnail captcha" src="<?php echo e(captcha_src('flat')); ?>" onclick="this.src='/captcha/flat?'+Math.random()" title="点击图片重新获取验证码">
                     </div>
                 </div>
                 <div class="field">
