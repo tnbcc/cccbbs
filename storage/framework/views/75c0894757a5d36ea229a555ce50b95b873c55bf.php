@@ -1,12 +1,12 @@
 
-<?php $__env->startSection('title', '首页'); ?>
+<?php $__env->startSection('title', '操作成功'); ?>
 
 <?php $__env->startSection('content'); ?>
     <div class="panel panel-default">
-        <div class="panel-heading">提示</div>
+        <div class="panel-heading">操作成功</div>
         <div class="panel-body text-center">
-            <h1>请先验证邮箱</h1>
-            <a class="btn btn-primary" href="<?php echo e(route('email_verification.send')); ?>">重新发送验证邮件</a>
+            <h1><?php echo e($msg); ?></h1>
+            <a class="btn btn-primary" href="<?php echo e(route('root')); ?>">返回首页</a>
         </div>
     </div>
 <?php $__env->stopSection(); ?>
