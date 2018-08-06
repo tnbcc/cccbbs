@@ -10,6 +10,15 @@ class User extends Authenticatable
 {
     use HasApiTokens, Notifiable;
 
+    const SEX_MAN     = 'man';
+    const SEX_WOMAN   = 'woman';
+    const SEX_UNKNOWN ='unknow';
+
+    public static $sexMap = [
+            self::SEX_MAN     =>'男',
+            self::SEX_WOMAN   =>'女',
+            self::SEX_UNKNOWN =>'未知'
+        ];
     protected $fillable = [
        'name','email', 'phone', 'password','true_ip','email_verified'
     ];

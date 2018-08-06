@@ -7,7 +7,8 @@
  */
 Route::group(['namespace' => 'Home'], function (){
    Route::get('/','IndexsController@index')->name('root');
-    Route::group(['middleware' => 'auth:web'], function() {
+   Route::resource('users','UsersController');
+   Route::group(['middleware' => 'auth:web'], function() {
         Route::get('/email_verify_notice', 'IndexsController@emailVerifyNotice')->name('email_verify_notice');
         Route::get('/email_verification/verify', 'IndexsController@verify')->name('email_verification.verify');
         Route::get('/email_verification/send', 'IndexsController@send')->name('email_verification.send');

@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->string('github_name')->index()->nullable()->comment('github名称');
             $table->string('github_url')->nullable()->comment('githubUrl');
             $table->string('avatar')->nullable()->comment('头像');
+            $table->string('gender')->index()->default(\App\Models\User::SEX_UNKNOWN)->comment('性别: 0未知,1男,2女');
             $table->string('register_source')->nullable()->index()->comment('注册方式');
             $table->boolean('status')->index()->default(true)->comment('用户状态');
             $table->boolean('email_verified')->index()->default(false)->comment('邮箱验证');
